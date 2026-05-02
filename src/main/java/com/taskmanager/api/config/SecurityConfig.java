@@ -48,7 +48,7 @@ public CorsConfigurationSource corsConfig() {
     CorsConfiguration config = new CorsConfiguration();
 
     config.setAllowedOrigins(List.of(
-        "http://localhost:5173",
+        "http://localhost:5173/",
         "https://tm-ui-plum.vercel.app"
     ));
 
