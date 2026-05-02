@@ -37,6 +37,7 @@ public class JwtFilter extends OncePerRequestFilter {
             chain.doFilter(request, response);
             return;
         }
+        
         String token = authHeader.substring(7);
         if (!jwtService.isValid(token)) {
             chain.doFilter(request, response);
@@ -55,5 +56,6 @@ public class JwtFilter extends OncePerRequestFilter {
         auth.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
         SecurityContextHolder.getContext().setAuthentication(auth);
         chain.doFilter(request, response);
+        
     }
 }
